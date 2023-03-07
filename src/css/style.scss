@@ -1,0 +1,107 @@
+* {
+	--border-radius: 10px;
+	--card-background: #fff;
+	--card-margin: 10px 0px 0px 0px;
+	--color: hsla(0, 0%, 0%, 1);
+	--color-lighter: hsla(0, 0%, 50%, 1);
+	--info-height: 60px;
+
+	color: var(--color);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	font-family: Roboto;
+	background: transparent;
+	font-size: 16px;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f0f0f0;
+}
+
+.searchWrapper {
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: row;
+	height: 25px;
+	justify-content: space-between;
+	align-items: center;
+	width: 50vw;
+	background: var(--card-background);
+
+	.searchLeft,
+	.searchRight,
+	.searchCenter {
+		height: 100%;
+		border: none;
+		width: 20px;
+	}
+
+	.searchCenter {
+		width: calc(100% - 100px);
+	}
+
+	.searchLeft::before {
+		position: relative;
+		top: 4px;
+	}
+}
+
+.weatherCurrent {
+	padding: 20px;
+	border-radius: var(--border-radius);
+	background: var(--card-background);
+	margin: var(--card-margin);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+
+	.description {
+		color: var(--color-lighter);
+	}
+
+	img {
+		width: 100px;
+		align-self: flex-start;
+	}
+
+	img:nth-of-type(1) {
+		width: 50%;
+		padding: auto;
+		vertical-align: center;
+		align-self: center;
+	}
+}
+
+.temperature,
+.rainmeasure,
+.wind {
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	background-color: transparent;
+	width: 100%;
+	background-size: var(--info-height);
+	height: var(--info-height);
+	line-height: var(--info-height);
+	padding-left: var(--info-height);
+}
+
+.temperature {
+	background-image: url(../../src/img/info/thermometer.svg);
+}
+.rainmeasure {
+	background-image: url(../../src/img/info/rainmeasure.svg);
+}
+.wind {
+	background-image: url(../../src/img/info/wind.svg);
+}

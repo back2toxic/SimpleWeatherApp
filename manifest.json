@@ -1,0 +1,7 @@
+{
+  "name": "SimpleWeatherApp",
+  "short_name": "SimpleWeatherApp",
+  "description": "Shows weather info based on location entered",
+  "start_url": "/",
+  "display": "standalone"
+}
