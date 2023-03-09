@@ -1,8 +1,39 @@
 {
-  "npm": true,
-  "lint": {
-    "rules": [
-      "polymer-3"
-    ]
-  }
+	"npm": true,
+	"shell": "./src/SimpleWeather-app/simple-weather-app.js",
+	"lint": {
+		"rules": ["polymer-3"]
+	},
+	"autoBasePath": false,
+	"extraDependencies": ["!node_modules/@webcomponents/webcomponentsjs/gulpfile.js", "./src/*"],
+	"fragments": [
+		"node_modules/@webcomponents/webcomponentsjs/*.js",
+		"node_modules/@webcomponents/webcomponentsjs/*.js.map",
+		"node_modules/@webcomponents/webcomponentsjs/bundles/*.js",
+		"node_modules/@webcomponents/webcomponentsjs/bundles/*.js.map",
+		"src/customElements/*"
+	],
+	"moduleResolution": "node",
+	"builds": [
+		{
+			"name": "es6-prod",
+			"preset": "es6-unbundled",
+			"basePath": "/wetter/"
+		},
+		{
+			"name": "dev",
+			"js": {
+				"minify": false,
+				"compile": false
+			},
+			"css": {
+				"minify": false
+			},
+			"html": {
+				"minify": false
+			},
+			"bundle": false
+		}
+	]
 }
+

@@ -36,8 +36,11 @@ export function getCurrentWeather(data) {
 	}
 }
 export function getDailyWeather(data) {
+	let counter = 0
 	const days = data.reduce((acc, day) => {
 		acc.push({
+			opened: counter == 0 ? true : false,
+			description: day.description,
 			sunrise: day.sunrise,
 			sunset: day.sunset,
 			datetime: day.datetime,
@@ -74,6 +77,7 @@ export function getDailyWeather(data) {
 				return h
 			}, []),
 		})
+		counter++
 		return acc
 	}, [])
 	return days
